@@ -95,7 +95,7 @@ class Padding extends Dimension {
 
 @protected
 class Margin extends Dimension {
-  Padding() {
+  Margin() {
     px = _d1;
     m2 = _d2;
     m4 = _d4;

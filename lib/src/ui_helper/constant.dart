@@ -1,4 +1,4 @@
-const double defaultButtonHeight = 40.0;
+const double defaultButtonHeight = 44.0;
 const double defaultIconSize = 24.0;
 
 const double zero = 0.0;
