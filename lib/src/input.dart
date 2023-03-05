@@ -107,7 +107,7 @@ class ElegantOutlinedButton extends StatelessWidget {
       minWidth: double.infinity,
       elevation: zero,
       highlightElevation: zero,
-      color: color.transparent,
+      color: color.background,
       disabledColor: color.transparent,
       splashColor: color.primary.withOpacity(0.12),
       clipBehavior: Clip.antiAlias,

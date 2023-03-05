@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 extension ThemeDataExtension on ThemeData {
   // Radius
-  d.Radius get radius => d.Radius();
+  d.Radii get radius => d.Radii(1.0);
 
   // Margin
   d.Margin get margin => d.Margin();

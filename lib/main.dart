@@ -43,35 +43,35 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(20),
+        padding: theme.padding.p20.all,
         children: <Widget>[
           // Text View
           ElegantText.displayLarge('displayLarge'),
           ElegantText.displayMedium('displayMedium'),
           ElegantText.displaySmall('displaySmall'),
-          theme.margin.m10.verticalMargin,
+          theme.margin.vertical10,
           ElegantText.headlineLarge('headlineLarge'),
           ElegantText.headlineMedium('headlineMedium'),
           ElegantText.headlineSmall('headlineSmall'),
-          theme.margin.m10.verticalMargin,
+          theme.margin.vertical10,
           ElegantText.titleLarge('titleLarge'),
           ElegantText.titleMedium('titleMedium'),
           ElegantText.titleSmall('titleSmall'),
-          theme.margin.m10.verticalMargin,
+          theme.margin.vertical10,
           ElegantText.labelLarge('labelLarge'),
           ElegantText.labelMedium('labelMedium'),
           ElegantText.labelSmall('labelSmall'),
-          theme.margin.m10.verticalMargin,
+          theme.margin.vertical10,
           ElegantText.bodyLarge('bodyLarge'),
           ElegantText.bodyMedium('bodyMedium'),
           ElegantText.bodySmall('bodySmall'),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
 
           // Filled Button
           ElegantText.labelLarge('Filled Button'),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () => print(theme.padding.p10.all),
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantFilledButton(
                   disabled: true,
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {},
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantFilledButton.icon(
                   disabled: true,
@@ -112,13 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
 
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
 
           // Outlined Button
           ElegantText.labelLarge('Outlined Button'),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {},
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantOutlinedButton(
                   disabled: true,
@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -147,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {},
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantOutlinedButton.icon(
                   disabled: true,
@@ -159,13 +159,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
 
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
 
           // Text Button
           ElegantText.labelLarge('Text Button'),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -174,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {},
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantTextButton(
                   disabled: true,
@@ -184,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -194,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {},
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantTextButton.icon(
                   disabled: true,
@@ -206,13 +206,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
 
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
 
           // Elevated Button
           ElegantText.labelLarge('Elevated Button'),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -221,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {},
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantElevatedButton(
                   disabled: true,
@@ -231,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -241,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {},
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantElevatedButton.icon(
                   disabled: true,
@@ -253,13 +253,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
 
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
 
           // Tonal Button
           ElegantText.labelLarge('Tonal Button'),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -268,7 +268,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {},
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantTonalButton(
                   disabled: true,
@@ -278,7 +278,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           Row(
             children: [
               Expanded(
@@ -288,7 +288,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {},
                 ),
               ),
-              theme.margin.m20.horizontalMargin,
+              theme.margin.horizontal20,
               Expanded(
                 child: ElegantTonalButton.icon(
                   disabled: true,
@@ -300,9 +300,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
 
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.m20.verticalMargin,
+          theme.margin.vertical20,
         ],
       ),
     );
