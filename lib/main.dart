@@ -9,14 +9,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorSchemeSeed: const Color(0xFF009E60),
-        brightness: Brightness.light,
+        brightness: Brightness.dark,
         splashFactory: InkSparkle.constantTurbulenceSeedSplashFactory,
       ),
       home: const MyHomePage(title: 'Design System'),
@@ -26,9 +25,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -37,7 +34,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -67,9 +63,46 @@ class _MyHomePageState extends State<MyHomePage> {
           ElegantText.bodySmall('bodySmall'),
           theme.margin.vertical20,
           const Divider(height: 1),
+          theme.margin.vertical20, ElegantText.labelLarge('Text Input Field'),
           theme.margin.vertical20,
-
-          // Filled Button
+          ElegantTextInputField(
+            hint: 'Hint',
+          ),
+          theme.margin.vertical20,
+          ElegantTextInputField.prefix(
+            hint: 'Hint',
+            icon: Icons.phone,
+          ),
+          theme.margin.vertical20,
+          ElegantTextInputField.suffix(
+            hint: 'Hint',
+            onIconPressed: () {},
+            icon: Icons.graphic_eq_outlined,
+          ),
+          theme.margin.vertical20,
+          const Divider(height: 1),
+          theme.margin.vertical20,
+          ElegantText.labelLarge('Number Input Field'),
+          theme.margin.vertical20,
+          ElegantNumberInputField(
+            maxLength: 6,
+            hint: 'Hint',
+          ),
+          theme.margin.vertical20,
+          ElegantNumberInputField.prefix(
+            hint: 'Hint',
+            maxLength: 10,
+            icon: Icons.phone,
+          ),
+          theme.margin.vertical20,
+          ElegantNumberInputField.suffix(
+            hint: 'Hint',
+            maxLength: 6,
+            onIconPressed: () {},
+            icon: Icons.graphic_eq_outlined,
+          ),
+          theme.margin.vertical20,
+          const Divider(height: 1), theme.margin.vertical20, // Filled Button
           ElegantText.labelLarge('Filled Button'),
           theme.margin.vertical20,
           Row(
@@ -111,12 +144,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-
           theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.vertical20,
-
-          // Outlined Button
+          theme.margin.vertical20, // Outlined Button
           ElegantText.labelLarge('Outlined Button'),
           theme.margin.vertical20,
           Row(
@@ -158,12 +188,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-
           theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.vertical20,
-
-          // Text Button
+          theme.margin.vertical20, // Text Button
           ElegantText.labelLarge('Text Button'),
           theme.margin.vertical20,
           Row(
@@ -205,12 +232,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-
           theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.vertical20,
-
-          // Elevated Button
+          theme.margin.vertical20, // Elevated Button
           ElegantText.labelLarge('Elevated Button'),
           theme.margin.vertical20,
           Row(
@@ -252,12 +276,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-
           theme.margin.vertical20,
           const Divider(height: 1),
-          theme.margin.vertical20,
-
-          // Tonal Button
+          theme.margin.vertical20, // Tonal Button
           ElegantText.labelLarge('Tonal Button'),
           theme.margin.vertical20,
           Row(
@@ -299,7 +320,6 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-
           theme.margin.vertical20,
           const Divider(height: 1),
           theme.margin.vertical20,

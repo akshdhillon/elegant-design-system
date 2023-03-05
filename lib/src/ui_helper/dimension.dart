@@ -210,33 +210,33 @@ class Radii extends Dimension {
 
   Radii(this.multiplier);
 
-  Radius get zero => Radius.zero;
+  BorderRadius get zero => BorderRadius.zero;
 
-  Radius get px => Radius.circular(_1);
+  BorderRadius get px => BorderRadius.all(Radius.circular(_1));
 
-  Radius get radius4 => Radius.circular(_4);
+  BorderRadius get radius4 => BorderRadius.all(Radius.circular(_4));
 
-  Radius get radius8 => Radius.circular(_8);
+  BorderRadius get radius8 => BorderRadius.all(Radius.circular(_8));
 
-  Radius get radius12 => Radius.circular(_12);
+  BorderRadius get radius12 => BorderRadius.all(Radius.circular(_12));
 
-  Radius get radius16 => Radius.circular(_16);
+  BorderRadius get radius16 => BorderRadius.all(Radius.circular(_16));
 
-  Radius get radius20 => Radius.circular(_20);
+  BorderRadius get radius20 => BorderRadius.all(Radius.circular(_20));
 
-  Radius get radius24 => Radius.circular(_24);
+  BorderRadius get radius24 => BorderRadius.all(Radius.circular(_24));
 
-  Radius get radius28 => Radius.circular(_28);
+  BorderRadius get radius28 => BorderRadius.all(Radius.circular(_28));
 
-  Radius get radius32 => Radius.circular(_32);
+  BorderRadius get radius32 => BorderRadius.all(Radius.circular(_32));
 
-  Radius get radius36 => Radius.circular(_36);
+  BorderRadius get radius36 => BorderRadius.all(Radius.circular(_36));
 
-  Radius get radius40 => Radius.circular(_40);
+  BorderRadius get radius40 => BorderRadius.all(Radius.circular(_40));
 
-  Radius get radius44 => Radius.circular(_44);
+  BorderRadius get radius44 => BorderRadius.all(Radius.circular(_44));
 
-  Radius get radius48 => Radius.circular(_48);
+  BorderRadius get radius48 => BorderRadius.all(Radius.circular(_48));
 
-  Radius get max => Radius.circular(_max);
+  BorderRadius get max => BorderRadius.all(Radius.circular(_max));
 }
