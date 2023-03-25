@@ -55,13 +55,18 @@ class ElegantTextInputField extends StatelessWidget {
       controller: controller,
       style: theme.textTheme.bodyLarge,
       decoration: InputDecoration(
-        contentPadding: theme.padding.p16.all.add(
-          EdgeInsets.only(top: v1),
+        contentPadding: theme.padding.p16.horizontal,
+        constraints: BoxConstraints(
+          minHeight: 0,
+          maxHeight: defaultTextFieldHeight,
         ),
-        isCollapsed: true,
+        // isDense: true,
         filled: true,
         fillColor: theme.colorScheme.surfaceVariant,
-        border: OutlineInputBorder(borderRadius: theme.radius.max),
+        border: OutlineInputBorder(
+          borderRadius: theme.radius.max,
+          borderSide: BorderSide.none,
+        ),
         hintText: hint,
         hintStyle: theme.textTheme.bodyLarge?.copyWith(
           color: theme.colorScheme.onSurfaceVariant,
@@ -152,17 +157,28 @@ class ElegantNumberInputField extends StatelessWidget {
       style: theme.textTheme.bodyLarge?.copyWith(letterSpacing: 2),
       textAlign: TextAlign.center,
       decoration: InputDecoration(
-        contentPadding: theme.padding.p16.vertical.add(
-          EdgeInsets.only(
-            top: v1,
-            left: _type == _FieldType.regular ? 16 : 0,
-            right: _type == _FieldType.regular ? 16 : 0,
-          ),
+        // contentPadding: theme.padding.p16.vertical.add(
+        //   EdgeInsets.only(
+        //     top: v1,
+        //     left: _type == _FieldType.regular ? 16 : 0,
+        //     right: _type == _FieldType.regular ? 16 : 0,
+        //   ),
+        // ),
+        // isCollapsed: true,
+        contentPadding: EdgeInsets.only(
+          left: _type == _FieldType.regular ? 16 : 0,
+          right: _type == _FieldType.regular ? 16 : 0,
         ),
-        isCollapsed: true,
+        constraints: BoxConstraints(
+          minHeight: 0,
+          maxHeight: defaultTextFieldHeight,
+        ),
         filled: true,
         fillColor: theme.colorScheme.surfaceVariant,
-        border: OutlineInputBorder(borderRadius: theme.radius.max),
+        border: OutlineInputBorder(
+          borderRadius: theme.radius.max,
+          borderSide: BorderSide.none,
+        ),
         hintText: hint,
         hintStyle: theme.textTheme.bodyLarge?.copyWith(
           color: theme.colorScheme.onSurfaceVariant,
