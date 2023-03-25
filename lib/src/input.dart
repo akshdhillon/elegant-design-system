@@ -8,6 +8,7 @@ class ElegantFilledButton extends StatelessWidget {
   final String title;
   final bool disabled;
   final IconData iconData;
+  final bool loading;
   final _ButtonType _type;
 
   const ElegantFilledButton({
@@ -15,6 +16,7 @@ class ElegantFilledButton extends StatelessWidget {
     required this.onTap,
     required this.title,
     this.disabled = false,
+    this.loading = true,
   })  : _type = _ButtonType.normal,
         iconData = Icons.abc;
 
@@ -24,6 +26,7 @@ class ElegantFilledButton extends StatelessWidget {
     required this.title,
     required this.iconData,
     this.disabled = false,
+    this.loading = false,
   }) : _type = _ButtonType.icon;
 
   @override
@@ -31,7 +34,7 @@ class ElegantFilledButton extends StatelessWidget {
     final color = Theme.of(context).colorScheme;
 
     return MaterialButton(
-      onPressed: !disabled ? onTap : null,
+      onPressed: !disabled ? () => loading ? null : onTap.call() : null,
       height: defaultButtonHeight,
       minWidth: double.infinity,
       color: color.primary,
@@ -42,34 +45,42 @@ class ElegantFilledButton extends StatelessWidget {
       shape: const StadiumBorder(),
       clipBehavior: Clip.antiAlias,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          if (_type == _ButtonType.icon)
-            Icon(
-              Icons.add,
-              size: 20,
-              color: !disabled
-                  ? color.onPrimary
-                  : color.onSurface.withOpacity(0.38),
+      child: loading && !disabled
+          ? SizedBox.square(
+              dimension: v20,
+              child: CircularProgressIndicator(
+                color: color.onPrimary,
+                strokeWidth: 3,
+              ),
+            )
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                if (_type == _ButtonType.icon)
+                  Icon(
+                    Icons.add,
+                    size: 20,
+                    color: !disabled
+                        ? color.onPrimary
+                        : color.onSurface.withOpacity(0.38),
+                  ),
+                if (_type == _ButtonType.icon) SizedBox(width: v8),
+                Flexible(
+                  child: ElegantText.buttonTitleDefault(
+                    title,
+                    maxLines: 3,
+                    textAlign: _type == _ButtonType.normal
+                        ? TextAlign.center
+                        : TextAlign.left,
+                    color: !disabled
+                        ? color.onPrimary
+                        : color.onSurface.withOpacity(0.38),
+                  ),
+                ),
+              ],
             ),
-          if (_type == _ButtonType.icon) SizedBox(width: v8),
-          Flexible(
-            child: ElegantText.buttonTitleDefault(
-              title,
-              maxLines: 3,
-              textAlign: _type == _ButtonType.normal
-                  ? TextAlign.center
-                  : TextAlign.left,
-              color: !disabled
-                  ? color.onPrimary
-                  : color.onSurface.withOpacity(0.38),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
