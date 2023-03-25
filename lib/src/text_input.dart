@@ -14,6 +14,7 @@ class ElegantTextInputField extends StatelessWidget {
   final TextEditingController? controller;
   final IconData icon;
   final VoidCallback? onIconPressed;
+  final bool enabled;
 
   const ElegantTextInputField({
     super.key,
@@ -21,6 +22,7 @@ class ElegantTextInputField extends StatelessWidget {
     this.onChanged,
     this.validator,
     this.controller,
+    this.enabled = true,
   })  : _type = _FieldType.regular,
         icon = Icons.circle,
         onIconPressed = null;
@@ -32,6 +34,7 @@ class ElegantTextInputField extends StatelessWidget {
     this.validator,
     this.controller,
     required this.icon,
+    this.enabled = true,
   })  : _type = _FieldType.prefix,
         onIconPressed = null;
 
@@ -43,6 +46,7 @@ class ElegantTextInputField extends StatelessWidget {
     this.controller,
     required this.icon,
     required this.onIconPressed,
+    this.enabled = true,
   }) : _type = _FieldType.suffix;
 
   @override
@@ -51,6 +55,7 @@ class ElegantTextInputField extends StatelessWidget {
 
     return TextFormField(
       onChanged: onChanged,
+      enabled: enabled,
       validator: validator,
       controller: controller,
       style: theme.textTheme.bodyLarge,
@@ -107,6 +112,7 @@ class ElegantNumberInputField extends StatelessWidget {
   final IconData icon;
   final VoidCallback? onIconPressed;
   final int maxLength;
+  final bool enabled;
 
   const ElegantNumberInputField({
     super.key,
@@ -115,6 +121,7 @@ class ElegantNumberInputField extends StatelessWidget {
     this.validator,
     this.controller,
     required this.maxLength,
+    this.enabled = true,
   })  : _type = _FieldType.regular,
         icon = Icons.circle,
         onIconPressed = null;
@@ -127,6 +134,7 @@ class ElegantNumberInputField extends StatelessWidget {
     this.controller,
     required this.icon,
     required this.maxLength,
+    this.enabled = true,
   })  : _type = _FieldType.prefix,
         onIconPressed = null;
 
@@ -139,6 +147,7 @@ class ElegantNumberInputField extends StatelessWidget {
     required this.icon,
     required this.onIconPressed,
     required this.maxLength,
+    this.enabled = true,
   }) : _type = _FieldType.suffix;
 
   @override
