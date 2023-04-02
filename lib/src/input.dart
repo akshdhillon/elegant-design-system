@@ -4,28 +4,28 @@ import 'package:flutter/material.dart';
 enum _ButtonType { normal, icon }
 
 class ElegantFilledButton extends StatelessWidget {
-  final VoidCallback onTap;
+  final VoidCallback onPressed;
   final String title;
-  final bool disabled;
+  final bool enabled;
   final IconData iconData;
   final bool loading;
   final _ButtonType _type;
 
   const ElegantFilledButton({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
-    this.disabled = false,
-    this.loading = true,
+    this.enabled = true,
+    this.loading = false,
   })  : _type = _ButtonType.normal,
         iconData = Icons.abc;
 
   const ElegantFilledButton.icon({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
     required this.iconData,
-    this.disabled = false,
+    this.enabled = true,
     this.loading = false,
   }) : _type = _ButtonType.icon;
 
@@ -33,19 +33,26 @@ class ElegantFilledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
 
+    final foregroundColor = enabled || loading
+        ? color.onPrimary
+        : color.onSurface.withOpacity(0.38);
+
+    final disabledColor =
+        loading ? color.primary : color.onSurface.withOpacity(0.12);
+
     return MaterialButton(
-      onPressed: !disabled ? () => loading ? null : onTap.call() : null,
+      onPressed: enabled && !loading ? onPressed : null,
       height: defaultButtonHeight,
       minWidth: double.infinity,
       color: color.primary,
-      disabledColor: color.onSurface.withOpacity(0.12),
+      disabledColor: disabledColor,
       splashColor: color.onPrimary.withOpacity(0.12),
       elevation: zero,
       highlightElevation: 0,
       shape: const StadiumBorder(),
       clipBehavior: Clip.antiAlias,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      child: loading && !disabled
+      child: loading && enabled
           ? SizedBox.square(
               dimension: v20,
               child: CircularProgressIndicator(
@@ -62,9 +69,7 @@ class ElegantFilledButton extends StatelessWidget {
                   Icon(
                     Icons.add,
                     size: 20,
-                    color: !disabled
-                        ? color.onPrimary
-                        : color.onSurface.withOpacity(0.38),
+                    color: foregroundColor,
                   ),
                 if (_type == _ButtonType.icon) SizedBox(width: v8),
                 Flexible(
@@ -74,9 +79,7 @@ class ElegantFilledButton extends StatelessWidget {
                     textAlign: _type == _ButtonType.normal
                         ? TextAlign.center
                         : TextAlign.left,
-                    color: !disabled
-                        ? color.onPrimary
-                        : color.onSurface.withOpacity(0.38),
+                    color: foregroundColor,
                   ),
                 ),
               ],
@@ -88,7 +91,7 @@ class ElegantFilledButton extends StatelessWidget {
 class ElegantOutlinedButton extends StatelessWidget {
   final VoidCallback onTap;
   final String title;
-  final bool disabled;
+  final bool enabled;
   final IconData iconData;
   final _ButtonType _type;
 
@@ -96,7 +99,7 @@ class ElegantOutlinedButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.title,
-    this.disabled = false,
+    this.enabled = true,
   })  : _type = _ButtonType.normal,
         iconData = Icons.abc;
 
@@ -105,7 +108,7 @@ class ElegantOutlinedButton extends StatelessWidget {
     required this.onTap,
     required this.title,
     required this.iconData,
-    this.disabled = false,
+    this.enabled = true,
   }) : _type = _ButtonType.icon;
 
   @override
@@ -113,7 +116,7 @@ class ElegantOutlinedButton extends StatelessWidget {
     final color = Theme.of(context).colorScheme;
 
     return MaterialButton(
-      onPressed: !disabled ? onTap : null,
+      onPressed: enabled ? onTap : null,
       height: defaultButtonHeight,
       minWidth: double.infinity,
       elevation: zero,
@@ -125,7 +128,7 @@ class ElegantOutlinedButton extends StatelessWidget {
       shape: StadiumBorder(
         side: BorderSide(
           width: 1,
-          color: !disabled ? color.outline : color.onSurface.withOpacity(0.12),
+          color: enabled ? color.outline : color.onSurface.withOpacity(0.12),
         ),
       ),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -139,7 +142,7 @@ class ElegantOutlinedButton extends StatelessWidget {
               Icons.add,
               size: 20,
               color:
-                  !disabled ? color.primary : color.onSurface.withOpacity(0.38),
+                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           if (_type == _ButtonType.icon) const SizedBox(width: v8),
           Flexible(
@@ -150,7 +153,7 @@ class ElegantOutlinedButton extends StatelessWidget {
                   ? TextAlign.center
                   : TextAlign.left,
               color:
-                  !disabled ? color.primary : color.onSurface.withOpacity(0.38),
+                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           ),
         ],
@@ -162,7 +165,7 @@ class ElegantOutlinedButton extends StatelessWidget {
 class ElegantTextButton extends StatelessWidget {
   final VoidCallback? onTap;
   final String title;
-  final bool disabled;
+  final bool enabled;
   final IconData iconData;
   final _ButtonType _type;
 
@@ -170,7 +173,7 @@ class ElegantTextButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.title,
-    this.disabled = false,
+    this.enabled = true,
   })  : _type = _ButtonType.normal,
         iconData = Icons.abc;
 
@@ -179,7 +182,7 @@ class ElegantTextButton extends StatelessWidget {
     required this.onTap,
     required this.title,
     required this.iconData,
-    this.disabled = false,
+    this.enabled = true,
   }) : _type = _ButtonType.icon;
 
   @override
@@ -187,7 +190,7 @@ class ElegantTextButton extends StatelessWidget {
     final color = Theme.of(context).colorScheme;
 
     return MaterialButton(
-      onPressed: !disabled ? onTap : null,
+      onPressed: enabled ? onTap : null,
       height: defaultButtonHeight,
       minWidth: double.infinity,
       elevation: zero,
@@ -208,7 +211,7 @@ class ElegantTextButton extends StatelessWidget {
               Icons.add,
               size: 20,
               color:
-                  !disabled ? color.primary : color.onSurface.withOpacity(0.38),
+                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           if (_type == _ButtonType.icon) const SizedBox(width: v8),
           Flexible(
@@ -219,7 +222,7 @@ class ElegantTextButton extends StatelessWidget {
                   ? TextAlign.center
                   : TextAlign.left,
               color:
-                  !disabled ? color.primary : color.onSurface.withOpacity(0.38),
+                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           ),
         ],
@@ -231,7 +234,7 @@ class ElegantTextButton extends StatelessWidget {
 class ElegantElevatedButton extends StatelessWidget {
   final VoidCallback? onTap;
   final String title;
-  final bool disabled;
+  final bool enabled;
   final IconData iconData;
   final _ButtonType _type;
 
@@ -239,7 +242,7 @@ class ElegantElevatedButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.title,
-    this.disabled = false,
+    this.enabled = true,
   })  : _type = _ButtonType.normal,
         iconData = Icons.abc;
 
@@ -248,7 +251,7 @@ class ElegantElevatedButton extends StatelessWidget {
     required this.onTap,
     required this.title,
     required this.iconData,
-    this.disabled = false,
+    this.enabled = true,
   }) : _type = _ButtonType.icon;
 
   @override
@@ -256,7 +259,7 @@ class ElegantElevatedButton extends StatelessWidget {
     final color = Theme.of(context).colorScheme;
 
     return MaterialButton(
-      onPressed: !disabled ? onTap : null,
+      onPressed: enabled ? onTap : null,
       height: defaultButtonHeight,
       minWidth: double.infinity,
       elevation: 3,
@@ -277,7 +280,7 @@ class ElegantElevatedButton extends StatelessWidget {
               Icons.add,
               size: 20,
               color:
-                  !disabled ? color.primary : color.onSurface.withOpacity(0.38),
+                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           if (_type == _ButtonType.icon) const SizedBox(width: v8),
           Flexible(
@@ -288,7 +291,7 @@ class ElegantElevatedButton extends StatelessWidget {
                   ? TextAlign.center
                   : TextAlign.left,
               color:
-                  !disabled ? color.primary : color.onSurface.withOpacity(0.38),
+                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           ),
         ],
@@ -300,7 +303,7 @@ class ElegantElevatedButton extends StatelessWidget {
 class ElegantTonalButton extends StatelessWidget {
   final VoidCallback? onTap;
   final String title;
-  final bool disabled;
+  final bool enabled;
   final IconData iconData;
   final _ButtonType _type;
 
@@ -308,7 +311,7 @@ class ElegantTonalButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.title,
-    this.disabled = false,
+    this.enabled = true,
   })  : _type = _ButtonType.normal,
         iconData = Icons.abc;
 
@@ -317,7 +320,7 @@ class ElegantTonalButton extends StatelessWidget {
     required this.onTap,
     required this.title,
     required this.iconData,
-    this.disabled = false,
+    this.enabled = true,
   }) : _type = _ButtonType.icon;
 
   @override
@@ -325,7 +328,7 @@ class ElegantTonalButton extends StatelessWidget {
     final color = Theme.of(context).colorScheme;
 
     return MaterialButton(
-      onPressed: !disabled ? onTap : null,
+      onPressed: enabled ? onTap : null,
       height: defaultButtonHeight,
       minWidth: double.infinity,
       elevation: zero,
@@ -345,7 +348,7 @@ class ElegantTonalButton extends StatelessWidget {
             Icon(
               Icons.add,
               size: 20,
-              color: !disabled
+              color: enabled
                   ? color.onSecondaryContainer
                   : color.onSurface.withOpacity(0.38),
             ),
@@ -357,7 +360,7 @@ class ElegantTonalButton extends StatelessWidget {
               textAlign: _type == _ButtonType.normal
                   ? TextAlign.center
                   : TextAlign.left,
-              color: !disabled
+              color: enabled
                   ? color.onSecondaryContainer
                   : color.onSurface.withOpacity(0.38),
             ),
