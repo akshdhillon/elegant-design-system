@@ -156,6 +156,7 @@ class ElegantNumberInputField extends StatelessWidget {
 
     return TextFormField(
       onChanged: onChanged,
+      enabled: enabled,
       validator: validator,
       controller: controller,
       keyboardType: TextInputType.phone,
