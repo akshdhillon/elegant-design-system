@@ -33,12 +33,10 @@ class ElegantFilledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
 
-    final foregroundColor = enabled || loading
-        ? color.onPrimary
-        : color.onSurface.withOpacity(0.38);
+    final foregroundColor =
+        enabled || loading ? color.onPrimary : color.onSurface.withOpacity(0.38);
 
-    final disabledColor =
-        loading ? color.primary : color.onSurface.withOpacity(0.12);
+    final disabledColor = loading ? color.primary : color.onSurface.withOpacity(0.12);
 
     return MaterialButton(
       onPressed: enabled && !loading ? onPressed : null,
@@ -52,7 +50,7 @@ class ElegantFilledButton extends StatelessWidget {
       shape: const StadiumBorder(),
       clipBehavior: Clip.antiAlias,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      child: loading && enabled
+      child: (loading && enabled) || loading
           ? SizedBox.square(
               dimension: v20,
               child: CircularProgressIndicator(
@@ -76,9 +74,7 @@ class ElegantFilledButton extends StatelessWidget {
                   child: ElegantText.buttonTitleDefault(
                     title,
                     maxLines: 3,
-                    textAlign: _type == _ButtonType.normal
-                        ? TextAlign.center
-                        : TextAlign.left,
+                    textAlign: _type == _ButtonType.normal ? TextAlign.center : TextAlign.left,
                     color: foregroundColor,
                   ),
                 ),
@@ -141,19 +137,15 @@ class ElegantOutlinedButton extends StatelessWidget {
             Icon(
               Icons.add,
               size: 20,
-              color:
-                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
+              color: enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           if (_type == _ButtonType.icon) const SizedBox(width: v8),
           Flexible(
             child: ElegantText.buttonTitleDefault(
               title,
               maxLines: 3,
-              textAlign: _type == _ButtonType.normal
-                  ? TextAlign.center
-                  : TextAlign.left,
-              color:
-                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
+              textAlign: _type == _ButtonType.normal ? TextAlign.center : TextAlign.left,
+              color: enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           ),
         ],
@@ -210,19 +202,15 @@ class ElegantTextButton extends StatelessWidget {
             Icon(
               Icons.add,
               size: 20,
-              color:
-                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
+              color: enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           if (_type == _ButtonType.icon) const SizedBox(width: v8),
           Flexible(
             child: ElegantText.buttonTitleDefault(
               title,
               maxLines: 3,
-              textAlign: _type == _ButtonType.normal
-                  ? TextAlign.center
-                  : TextAlign.left,
-              color:
-                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
+              textAlign: _type == _ButtonType.normal ? TextAlign.center : TextAlign.left,
+              color: enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           ),
         ],
@@ -279,19 +267,15 @@ class ElegantElevatedButton extends StatelessWidget {
             Icon(
               Icons.add,
               size: 20,
-              color:
-                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
+              color: enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           if (_type == _ButtonType.icon) const SizedBox(width: v8),
           Flexible(
             child: ElegantText.buttonTitleDefault(
               title,
               maxLines: 3,
-              textAlign: _type == _ButtonType.normal
-                  ? TextAlign.center
-                  : TextAlign.left,
-              color:
-                  enabled ? color.primary : color.onSurface.withOpacity(0.38),
+              textAlign: _type == _ButtonType.normal ? TextAlign.center : TextAlign.left,
+              color: enabled ? color.primary : color.onSurface.withOpacity(0.38),
             ),
           ),
         ],
@@ -348,21 +332,15 @@ class ElegantTonalButton extends StatelessWidget {
             Icon(
               Icons.add,
               size: 20,
-              color: enabled
-                  ? color.onSecondaryContainer
-                  : color.onSurface.withOpacity(0.38),
+              color: enabled ? color.onSecondaryContainer : color.onSurface.withOpacity(0.38),
             ),
           if (_type == _ButtonType.icon) const SizedBox(width: v8),
           Flexible(
             child: ElegantText.buttonTitleDefault(
               title,
               maxLines: 3,
-              textAlign: _type == _ButtonType.normal
-                  ? TextAlign.center
-                  : TextAlign.left,
-              color: enabled
-                  ? color.onSecondaryContainer
-                  : color.onSurface.withOpacity(0.38),
+              textAlign: _type == _ButtonType.normal ? TextAlign.center : TextAlign.left,
+              color: enabled ? color.onSecondaryContainer : color.onSurface.withOpacity(0.38),
             ),
           ),
         ],
