@@ -63,7 +63,7 @@ class ElegantTextInputField extends StatelessWidget {
         contentPadding: theme.padding.p16.horizontal,
         constraints: BoxConstraints(
           minHeight: 0,
-          maxHeight: defaultTextFieldHeight,
+          maxHeight: kDefaultTextFieldHeight,
         ),
         // isDense: true,
         filled: true,
@@ -181,7 +181,7 @@ class ElegantNumberInputField extends StatelessWidget {
         ),
         constraints: BoxConstraints(
           minHeight: 0,
-          maxHeight: defaultTextFieldHeight,
+          maxHeight: kDefaultTextFieldHeight,
         ),
         filled: true,
         fillColor: theme.colorScheme.surfaceVariant,
