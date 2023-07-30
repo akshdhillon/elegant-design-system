@@ -85,7 +85,7 @@ class ElegantFilledButton extends StatelessWidget {
 }
 
 class ElegantOutlinedButton extends StatelessWidget {
-  final VoidCallback onTap;
+  final VoidCallback onPressed;
   final String title;
   final bool enabled;
   final IconData iconData;
@@ -93,7 +93,7 @@ class ElegantOutlinedButton extends StatelessWidget {
 
   const ElegantOutlinedButton({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
     this.enabled = true,
   })  : _type = _ButtonType.normal,
@@ -101,7 +101,7 @@ class ElegantOutlinedButton extends StatelessWidget {
 
   const ElegantOutlinedButton.icon({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
     required this.iconData,
     this.enabled = true,
@@ -112,7 +112,7 @@ class ElegantOutlinedButton extends StatelessWidget {
     final color = Theme.of(context).colorScheme;
 
     return MaterialButton(
-      onPressed: enabled ? onTap : null,
+      onPressed: enabled ? onPressed : null,
       height: kDefaultButtonHeight,
       minWidth: double.infinity,
       elevation: kZero,
@@ -155,7 +155,7 @@ class ElegantOutlinedButton extends StatelessWidget {
 }
 
 class ElegantTextButton extends StatelessWidget {
-  final VoidCallback? onTap;
+  final VoidCallback? onPressed;
   final String title;
   final bool enabled;
   final IconData iconData;
@@ -163,7 +163,7 @@ class ElegantTextButton extends StatelessWidget {
 
   const ElegantTextButton({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
     this.enabled = true,
   })  : _type = _ButtonType.normal,
@@ -171,7 +171,7 @@ class ElegantTextButton extends StatelessWidget {
 
   const ElegantTextButton.icon({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
     required this.iconData,
     this.enabled = true,
@@ -182,7 +182,7 @@ class ElegantTextButton extends StatelessWidget {
     final color = Theme.of(context).colorScheme;
 
     return MaterialButton(
-      onPressed: enabled ? onTap : null,
+      onPressed: enabled ? onPressed : null,
       height: kDefaultButtonHeight,
       minWidth: double.infinity,
       elevation: kZero,
@@ -220,7 +220,7 @@ class ElegantTextButton extends StatelessWidget {
 }
 
 class ElegantElevatedButton extends StatelessWidget {
-  final VoidCallback? onTap;
+  final VoidCallback? onPressed;
   final String title;
   final bool enabled;
   final IconData iconData;
@@ -228,7 +228,7 @@ class ElegantElevatedButton extends StatelessWidget {
 
   const ElegantElevatedButton({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
     this.enabled = true,
   })  : _type = _ButtonType.normal,
@@ -236,7 +236,7 @@ class ElegantElevatedButton extends StatelessWidget {
 
   const ElegantElevatedButton.icon({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
     required this.iconData,
     this.enabled = true,
@@ -247,7 +247,7 @@ class ElegantElevatedButton extends StatelessWidget {
     final color = Theme.of(context).colorScheme;
 
     return MaterialButton(
-      onPressed: enabled ? onTap : null,
+      onPressed: enabled ? onPressed : null,
       height: kDefaultButtonHeight,
       minWidth: double.infinity,
       elevation: 3,
@@ -285,7 +285,7 @@ class ElegantElevatedButton extends StatelessWidget {
 }
 
 class ElegantTonalButton extends StatelessWidget {
-  final VoidCallback? onTap;
+  final VoidCallback? onPressed;
   final String title;
   final bool enabled;
   final IconData iconData;
@@ -293,7 +293,7 @@ class ElegantTonalButton extends StatelessWidget {
 
   const ElegantTonalButton({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
     this.enabled = true,
   })  : _type = _ButtonType.normal,
@@ -301,7 +301,7 @@ class ElegantTonalButton extends StatelessWidget {
 
   const ElegantTonalButton.icon({
     super.key,
-    required this.onTap,
+    required this.onPressed,
     required this.title,
     required this.iconData,
     this.enabled = true,
@@ -312,7 +312,7 @@ class ElegantTonalButton extends StatelessWidget {
     final color = Theme.of(context).colorScheme;
 
     return MaterialButton(
-      onPressed: enabled ? onTap : null,
+      onPressed: enabled ? onPressed : null,
       height: kDefaultButtonHeight,
       minWidth: double.infinity,
       elevation: kZero,

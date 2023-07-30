@@ -128,7 +128,7 @@ class PreviewPage extends StatelessWidget {
               Expanded(
                 child: ElegantOutlinedButton(
                   title: 'Enabled',
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
               theme.margin.horizontal20,
@@ -136,7 +136,7 @@ class PreviewPage extends StatelessWidget {
                 child: ElegantOutlinedButton(
                   enabled: true,
                   title: 'Disabled',
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
             ],
@@ -148,7 +148,7 @@ class PreviewPage extends StatelessWidget {
                 child: ElegantOutlinedButton.icon(
                   title: 'Enabled',
                   iconData: Icons.add,
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
               theme.margin.horizontal20,
@@ -157,7 +157,7 @@ class PreviewPage extends StatelessWidget {
                   enabled: true,
                   title: 'Disabled',
                   iconData: Icons.add,
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
             ],
@@ -172,7 +172,7 @@ class PreviewPage extends StatelessWidget {
               Expanded(
                 child: ElegantTextButton(
                   title: 'Enabled',
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
               theme.margin.horizontal20,
@@ -180,7 +180,7 @@ class PreviewPage extends StatelessWidget {
                 child: ElegantTextButton(
                   enabled: true,
                   title: 'Disabled',
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
             ],
@@ -192,7 +192,7 @@ class PreviewPage extends StatelessWidget {
                 child: ElegantTextButton.icon(
                   title: 'Enabled',
                   iconData: Icons.add,
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
               theme.margin.horizontal20,
@@ -201,7 +201,7 @@ class PreviewPage extends StatelessWidget {
                   enabled: false,
                   title: 'Disabled',
                   iconData: Icons.add,
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
             ],
@@ -216,7 +216,7 @@ class PreviewPage extends StatelessWidget {
               Expanded(
                 child: ElegantElevatedButton(
                   title: 'Enabled',
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
               theme.margin.horizontal20,
@@ -224,7 +224,7 @@ class PreviewPage extends StatelessWidget {
                 child: ElegantElevatedButton(
                   enabled: false,
                   title: 'Disabled',
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
             ],
@@ -236,7 +236,7 @@ class PreviewPage extends StatelessWidget {
                 child: ElegantElevatedButton.icon(
                   title: 'Enabled',
                   iconData: Icons.add,
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
               theme.margin.horizontal20,
@@ -245,7 +245,7 @@ class PreviewPage extends StatelessWidget {
                   enabled: false,
                   title: 'Disabled',
                   iconData: Icons.add,
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
             ],
@@ -260,7 +260,7 @@ class PreviewPage extends StatelessWidget {
               Expanded(
                 child: ElegantTonalButton(
                   title: 'Enabled',
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
               theme.margin.horizontal20,
@@ -268,7 +268,7 @@ class PreviewPage extends StatelessWidget {
                 child: ElegantTonalButton(
                   enabled: false,
                   title: 'Disabled',
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
             ],
@@ -280,7 +280,7 @@ class PreviewPage extends StatelessWidget {
                 child: ElegantTonalButton.icon(
                   title: 'Enabled',
                   iconData: Icons.add,
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
               theme.margin.horizontal20,
@@ -289,7 +289,7 @@ class PreviewPage extends StatelessWidget {
                   enabled: false,
                   title: 'Disabled',
                   iconData: Icons.add,
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ),
             ],
