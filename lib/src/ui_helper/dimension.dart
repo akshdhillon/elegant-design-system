@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-@protected
 abstract class Dimension {
   final double _max = 100.0;
   final double _zero = 0.0;
@@ -32,7 +31,6 @@ abstract class Dimension {
   final double _50 = 50.0;
 }
 
-@protected
 class Padding extends Dimension {
   double get zero => _zero;
 
@@ -91,7 +89,6 @@ class Padding extends Dimension {
   double get max => _max;
 }
 
-@protected
 class Margin extends Dimension {
   // Vertical Margin
   SizedBox get verticalPx => SizedBox(height: _1);
@@ -204,7 +201,6 @@ class Margin extends Dimension {
   SizedBox get horizontalMax => SizedBox(width: _max);
 }
 
-@protected
 class Radii extends Dimension {
   final double multiplier;
 
