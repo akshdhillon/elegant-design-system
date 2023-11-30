@@ -65,7 +65,11 @@ class ElegantTextInputField extends StatelessWidget {
       style: theme.textTheme.bodyLarge,
       textAlign: textAlign,
       decoration: InputDecoration(
-        contentPadding: theme.padding.p16.horizontal,
+        // contentPadding: theme.padding.p16.horizontal,
+        contentPadding: EdgeInsets.only(
+          left: _type == _FieldType.regular ? 16 : 0,
+          right: _type == _FieldType.regular ? 16 : 0,
+        ),
         constraints: BoxConstraints(
           minHeight: 0,
           maxHeight: kDefaultTextFieldHeight,
