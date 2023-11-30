@@ -15,6 +15,7 @@ class ElegantTextInputField extends StatelessWidget {
   final IconData icon;
   final VoidCallback? onIconPressed;
   final bool enabled;
+  final TextAlign textAlign;
 
   const ElegantTextInputField({
     super.key,
@@ -23,6 +24,7 @@ class ElegantTextInputField extends StatelessWidget {
     this.validator,
     this.controller,
     this.enabled = true,
+    this.textAlign = TextAlign.center,
   })  : _type = _FieldType.regular,
         icon = Icons.circle,
         onIconPressed = null;
@@ -35,6 +37,7 @@ class ElegantTextInputField extends StatelessWidget {
     this.controller,
     required this.icon,
     this.enabled = true,
+    this.textAlign = TextAlign.center,
   })  : _type = _FieldType.prefix,
         onIconPressed = null;
 
@@ -47,6 +50,7 @@ class ElegantTextInputField extends StatelessWidget {
     required this.icon,
     required this.onIconPressed,
     this.enabled = true,
+    this.textAlign = TextAlign.center,
   }) : _type = _FieldType.suffix;
 
   @override
@@ -113,6 +117,7 @@ class ElegantNumberInputField extends StatelessWidget {
   final VoidCallback? onIconPressed;
   final int maxLength;
   final bool enabled;
+  final TextAlign textAlign;
 
   const ElegantNumberInputField({
     super.key,
@@ -122,6 +127,7 @@ class ElegantNumberInputField extends StatelessWidget {
     this.controller,
     required this.maxLength,
     this.enabled = true,
+    this.textAlign = TextAlign.center,
   })  : _type = _FieldType.regular,
         icon = Icons.circle,
         onIconPressed = null;
@@ -135,6 +141,7 @@ class ElegantNumberInputField extends StatelessWidget {
     required this.icon,
     required this.maxLength,
     this.enabled = true,
+    this.textAlign = TextAlign.center,
   })  : _type = _FieldType.prefix,
         onIconPressed = null;
 
@@ -148,6 +155,7 @@ class ElegantNumberInputField extends StatelessWidget {
     required this.onIconPressed,
     required this.maxLength,
     this.enabled = true,
+    this.textAlign = TextAlign.center,
   }) : _type = _FieldType.suffix;
 
   @override
