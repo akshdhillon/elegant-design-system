@@ -16,6 +16,7 @@ class ElegantTextInputField extends StatelessWidget {
   final VoidCallback? onIconPressed;
   final bool enabled;
   final TextAlign textAlign;
+  final bool spaceyLetters;
 
   const ElegantTextInputField({
     super.key,
@@ -25,6 +26,7 @@ class ElegantTextInputField extends StatelessWidget {
     this.controller,
     this.enabled = true,
     this.textAlign = TextAlign.center,
+    this.spaceyLetters = false,
   })  : _type = _FieldType.regular,
         icon = Icons.circle,
         onIconPressed = null;
@@ -38,6 +40,7 @@ class ElegantTextInputField extends StatelessWidget {
     required this.icon,
     this.enabled = true,
     this.textAlign = TextAlign.center,
+    this.spaceyLetters = false,
   })  : _type = _FieldType.prefix,
         onIconPressed = null;
 
@@ -51,6 +54,7 @@ class ElegantTextInputField extends StatelessWidget {
     required this.onIconPressed,
     this.enabled = true,
     this.textAlign = TextAlign.center,
+    this.spaceyLetters = false,
   }) : _type = _FieldType.suffix;
 
   @override
@@ -62,13 +66,15 @@ class ElegantTextInputField extends StatelessWidget {
       enabled: enabled,
       validator: validator,
       controller: controller,
-      style: theme.textTheme.bodyLarge,
+      style: theme.textTheme.bodyLarge?.copyWith(
+        letterSpacing: spaceyLetters ? 2 : null,
+      ),
       textAlign: textAlign,
       decoration: InputDecoration(
         contentPadding: theme.padding.p16.horizontal,
         constraints: BoxConstraints(
-          minHeight: 0,
-          maxHeight: kDefaultTextFieldHeight,
+          minHeight: kDefaultTextFieldHeight,
+          maxHeight: kDefaultTextFieldHeight * 2,
         ),
         // isDense: true,
         filled: true,
@@ -180,13 +186,14 @@ class ElegantNumberInputField extends StatelessWidget {
       style: theme.textTheme.bodyLarge?.copyWith(letterSpacing: 2),
       textAlign: textAlign,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.only(
-          left: _type == _FieldType.regular ? 16 : 0,
-          right: _type == _FieldType.regular ? 16 : 0,
-        ),
+        contentPadding: theme.padding.p16.horizontal,
+        // contentPadding: EdgeInsets.only(
+        //   left: _type == _FieldType.regular ? 16 : 0,
+        //   right: _type == _FieldType.regular ? 16 : 0,
+        // ),
         constraints: BoxConstraints(
-          minHeight: 0,
-          maxHeight: kDefaultTextFieldHeight,
+          minHeight: kDefaultTextFieldHeight,
+          maxHeight: kDefaultTextFieldHeight * 2,
         ),
         filled: true,
         fillColor: theme.colorScheme.surfaceVariant,
