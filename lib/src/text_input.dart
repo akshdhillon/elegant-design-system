@@ -63,6 +63,7 @@ class ElegantTextInputField extends StatelessWidget {
       validator: validator,
       controller: controller,
       style: theme.textTheme.bodyLarge,
+      textAlign: textAlign,
       decoration: InputDecoration(
         contentPadding: theme.padding.p16.horizontal,
         constraints: BoxConstraints(
@@ -173,7 +174,7 @@ class ElegantNumberInputField extends StatelessWidget {
         LengthLimitingTextInputFormatter(maxLength),
       ],
       style: theme.textTheme.bodyLarge?.copyWith(letterSpacing: 2),
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
       decoration: InputDecoration(
         // contentPadding: theme.padding.p16.vertical.add(
         //   EdgeInsets.only(
