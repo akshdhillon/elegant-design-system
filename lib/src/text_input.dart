@@ -65,11 +65,7 @@ class ElegantTextInputField extends StatelessWidget {
       style: theme.textTheme.bodyLarge,
       textAlign: textAlign,
       decoration: InputDecoration(
-        // contentPadding: theme.padding.p16.horizontal,
-        contentPadding: EdgeInsets.only(
-          left: _type == _FieldType.regular ? 16 : 0,
-          right: _type == _FieldType.regular ? 16 : 0,
-        ),
+        contentPadding: theme.padding.p16.horizontal,
         constraints: BoxConstraints(
           minHeight: 0,
           maxHeight: kDefaultTextFieldHeight,
@@ -85,16 +81,20 @@ class ElegantTextInputField extends StatelessWidget {
         hintStyle: theme.textTheme.bodyLarge?.copyWith(
           color: theme.colorScheme.onSurfaceVariant,
         ),
-        prefixIconConstraints: BoxConstraints(),
+        prefixIconConstraints: BoxConstraints(minWidth: 56),
         prefixIcon: _type != _FieldType.prefix
-            ? null
+            ? _type != _FieldType.regular
+                ? SizedBox()
+                : null
             : Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 child: Icon(icon),
               ),
-        suffixIconConstraints: BoxConstraints(),
+        suffixIconConstraints: BoxConstraints(minWidth: 56),
         suffixIcon: _type != _FieldType.suffix
-            ? null
+            ? _type != _FieldType.regular
+                ? SizedBox()
+                : null
             : Material(
                 type: MaterialType.transparency,
                 clipBehavior: Clip.antiAlias,
@@ -180,14 +180,6 @@ class ElegantNumberInputField extends StatelessWidget {
       style: theme.textTheme.bodyLarge?.copyWith(letterSpacing: 2),
       textAlign: textAlign,
       decoration: InputDecoration(
-        // contentPadding: theme.padding.p16.vertical.add(
-        //   EdgeInsets.only(
-        //     top: v1,
-        //     left: _type == _FieldType.regular ? 16 : 0,
-        //     right: _type == _FieldType.regular ? 16 : 0,
-        //   ),
-        // ),
-        // isCollapsed: true,
         contentPadding: EdgeInsets.only(
           left: _type == _FieldType.regular ? 16 : 0,
           right: _type == _FieldType.regular ? 16 : 0,
